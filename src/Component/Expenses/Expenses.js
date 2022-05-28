@@ -2,17 +2,21 @@ import './Expenses.css';
 import ExpenseItem from './ExpenseItem';
 import Card from "../UI/Card";
 
+
 const Expenses= (props) => {
-   return (
+
+  console.log(props);
+   return ( 
         <Card className = "expenses">
-           {/* {props.expenses.map((person) => (
+           {props.expenses.map((person) => (
              <ExpenseItem
+             key = {person.title}
              title={person.title}
              amount={person.amount}
              date={person.date}
              location = {person.location} />
-           ))} */}
-          <ExpenseItem
+           ))}
+          {/* <ExpenseItem
             title={props.expenses[0].title}
             amount={props.expenses[0].amount}
             date={props.expenses[0].date}
@@ -35,7 +39,7 @@ const Expenses= (props) => {
             amount={props.expenses[3].amount}
             date={props.expenses[3].date}
             location = {props.expenses[3].location}
-          ></ExpenseItem>
+          ></ExpenseItem> */}
         </Card>
       );
 }
