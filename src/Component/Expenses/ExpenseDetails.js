@@ -1,8 +1,21 @@
 import "./ExpenseItem.css";
+import { useState } from "react";
+
+
 const ExpenseDetails = (props) => {
-    
-    return (
-        <div className="expense-item__price">${props.amount}</div>
+    const[amount,setAmount] = useState(props.amount)
+    console.log(amount);
+    return (   
+        <div>  {console.log("hu")}
+        <div className="expense-item__price">${amount}</div>
+        <div>
+        <button onClick = {()=>{
+          setAmount("100")
+          console.log(amount);
+        }}>$100</button>
+        
+      </div>
+      </div>
     )
 
 }

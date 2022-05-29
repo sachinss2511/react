@@ -5,33 +5,36 @@ import ExpenseDetails from './ExpenseDetails';
 import { useState } from 'react';
 
 const ExpenseItem = (props) => {
-
-  const[title,setTitle] = useState(props.title)
-    const clickHandler = () =>{
-     setTitle("update")
-    }
+//console.log(props.amount);
+  let [title,setTitle] = useState(props.title)
+ 
     const deleteHandler= (key)=>{
-      // const parentNode = document.getElementById('exp')
-          const a = document.getElementById(key)
+          let a = document.getElementById(key)
           console.log(a);
-          a.remove()
+          a.remove();
     }
      return (
+
           <div id = {props.title}>
       <Card className="expense-item">
        <ExpenseDate date = {props.date} />
           <div className="expense-item__description">
-          
+
            <h2>{title}</h2>
            <h2>{props.location}</h2>
         <ExpenseDetails amount = {props.amount} />
         </div>
         <div>
-          <button onClick = {clickHandler}>change title</button>
-          <button  onClick={()=>{
+                   <button onClick = { () => {
+                   setTitle("update")
+                 }}> change title </button>
+         </div> 
+         <div>
+                   <button  onClick={()=>{
             deleteHandler(props.title)
-          }}>delete</button>
-        </div>
+                     }}>delete</button>
+       </div> 
+      
       </Card>
       </div>  
     ); 
