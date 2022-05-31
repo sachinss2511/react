@@ -10,7 +10,7 @@ const ExpenseItem = (props) => {
  
     const deleteHandler= (key)=>{
           let a = document.getElementById(key)
-          console.log(a);
+          // console.log(a);
           a.remove();
     }
      return (

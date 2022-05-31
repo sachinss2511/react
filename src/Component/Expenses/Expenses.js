@@ -5,7 +5,7 @@ import Card from "../UI/Card";
 
 const Expenses= (props) => {
 
-  console.log(props);
+  //console.log(props);
    return ( 
         <Card className = "expenses">
            {props.expenses.map((person) => (
