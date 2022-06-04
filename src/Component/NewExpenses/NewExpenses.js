@@ -5,7 +5,7 @@ const NewExpenses = (props) => {
    console.log(props);
 return  (
     <div className= "new-expense">
-       <ExpenseForm  new1 = {props.new}/> 
+       <ExpenseForm  new = {props.new}/> 
     </div>
  )
  }

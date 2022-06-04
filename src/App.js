@@ -34,9 +34,10 @@ const App = () => {
       location: "india",
     },
   ];
+  console.log(expenses[0]);
   const [updateState, setUpdateState] = useState(expenses);
   const NewExp = (expenComingFromChild) => {
-    setUpdateState([...updateState, expenComingFromChild]);
+    setUpdateState([ expenComingFromChild,...updateState]);
   };
 
   // return React.createElement(

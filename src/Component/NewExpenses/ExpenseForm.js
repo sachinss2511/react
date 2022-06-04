@@ -32,7 +32,7 @@ const [enteredLocation, setEnteredLocation] = useState('')
     setEnteredAmount ("")
     setEnteredDate ("")
     setEnteredLocation("")
-  props.new1(newExpenseData)
+  props.new(newExpenseData)
 
   }
   return (  <form onSubmit={submitHandler}>
