@@ -21,14 +21,14 @@ const [filteredYear, setFilteredYear] = useState('2020');
     filterarr.push(exp)
   }
   })
- console.log(filterarr)
+ 
   return (
     <div>
       <Card className='expenses'>
 
         <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-
-        {filterarr.map((expense) => (
+        
+        {filterarr.length===0 ? (<p style={{ color: "white" }}> no exp found.</p>) : (filterarr.map((expense) => (
           
           <ExpenseItem
             key={expense.id}
@@ -37,7 +37,9 @@ const [filteredYear, setFilteredYear] = useState('2020');
             date={expense.date}
           />
          
-        ))}
+        ))) }
+        {filterarr.length===1 && <p style={{color:"white"}}>only one exp pls add more.</p>}
+        
       </Card>
     </div>
   );

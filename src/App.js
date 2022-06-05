@@ -3,6 +3,7 @@ import "./Component/Expenses/Expenses.css";
 import NewExpenses from "./Component/NewExpenses/NewExpenses";
 import Expenses from "./Component/Expenses/Expenses";
 import React, { useState } from "react";
+
 const App = () => {
   const expenses = [
     {
