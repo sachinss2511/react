@@ -1,8 +1,10 @@
 import './Expenses.css';
-import ExpenseItem from './ExpenseItem';
+import ExpensesList from './ExpensesList';
 import Card from "../UI/Card";
 import ExpensesFilter from './ExpensesFilter';
 import { useState } from 'react';
+import ExpensesChart from './ExpensesChart';
+
 
 const Expenses = (props) => {
 const [filteredYear, setFilteredYear] = useState('2020');
@@ -15,35 +17,26 @@ const [filteredYear, setFilteredYear] = useState('2020');
   //   return expense.date.getFullYear().toString() === filteredYear;
   // });
   const filterarr = [];
+  
   props.expenses.map((exp)=>{
-    if(exp.date.getFullYear().toString()===filteredYear)
+     if(exp.date.getFullYear().toString()===filteredYear)
   {
     filterarr.push(exp)
   }
-  })
+     })
+  
  
   return (
     <div>
       <Card className='expenses'>
 
-        <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-        
-        {filterarr.length===0 ? (<p style={{ color: "white" }}> no exp found.</p>) : (filterarr.map((expense) => (
-          
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-         
-        ))) }
-        {filterarr.length===1 && <p style={{color:"white"}}>only one exp pls add more.</p>}
-        
+      <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
+      <ExpensesChart expenses= {filterarr}/>
+      <ExpensesList items ={filterarr}/>  
       </Card>
     </div>
   );
-}
+  }
 export  default Expenses;
 
   //  return ( 
